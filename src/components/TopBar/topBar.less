@@ -1,0 +1,122 @@
+.tob_bar {
+  position: relative;
+  z-index: 1000;
+  .nav_top {
+    height: 70px;
+    box-sizing: border-box;
+    background: #242424;
+    border-bottom: 1px solid #000;
+    .wrap {
+      width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      .left {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .logo {
+          width: 176px;
+          height: 69px;
+          background-image: url(https://s2.music.126.net/style/web2/img/frame/topbar.png?66173fe8f1d5c9aaa80de42dcb67aa01);
+          background-position: 0 0;
+        }
+        .item_nav {
+          height: 100%;
+          display: flex;
+          align-items: center;
+          a {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 19px;
+            padding-right: 19px;
+            color: #ccc;
+            position: relative;
+            .sign {
+              width: 8px;
+              height: 8px;
+              position: absolute;
+              bottom: -5px;
+              left: 50%;
+              margin-left: -4px;
+              transform: rotate(-45deg);
+              background-color: #C20C0C;;
+            }
+          }
+          .selected {
+            color: #fff;
+            background-color: #000;
+          }
+        }
+      }
+      .right {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        .search {
+          width: 170px;
+          height: 32px;
+          border-radius: 32px;
+          input {
+            font-size: 12px;
+          }
+        }
+        .creator {
+          cursor: pointer;
+          height: 32px;
+          line-height: 31px;
+          box-sizing: border-box;
+          margin-left: 16px;
+          padding: 0 13px;
+          border: 1px solid #4F4F4F;
+          color: #ccc;
+          background-position: 0 -140px;
+          border-radius: 20px;
+          &:hover {
+            color: #fff;
+            border: 1px solid #ccc;
+          }
+        }
+        .login {
+          color: #787878;
+          margin-left: 20px;
+          cursor: pointer;
+          &:hover {
+            color: #666;
+          }
+        }
+      }
+    }
+  }
+  .nav_bottom {
+    z-index: 90;
+    min-height: 6px;
+    box-sizing: border-box;
+    background-color: #C20C0C;
+    border-bottom: 1px solid #a40011;
+    .b_nav_box {
+      display: flex;
+      align-items: center;
+      width: 1200px;
+      margin: 0 auto;
+      padding-left: 180px;
+      a {
+        margin: 7px 17px;
+        padding: 2px 12px;
+        border-radius: 20px;
+        color: #fff;
+        font-size: 12px;
+        &:hover {
+          background-color: #9B0909;
+        }
+      }
+    }
+    .home_selected {
+      color: #fff;
+      background-color: #9B0909;
+    }
+  }
+}
