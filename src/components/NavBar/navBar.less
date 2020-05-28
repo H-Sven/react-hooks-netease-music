@@ -89,6 +89,9 @@
             color: #666;
           }
         }
+        .avatarUrl {
+          margin-left: 20px;
+        }
       }
     }
   }
@@ -119,5 +122,23 @@
       color: #fff;
       background-color: #9B0909;
     }
+  }
+}
+.user_menu {
+  background-color: #2b2b2b;
+  :global(.ant-dropdown-menu-item) {
+    display: flex;
+    align-items: center;
+    padding: 5px 50px 5px 20px;
+    background-color: #2b2b2b;
+    color: #ccc;
+    &:hover {
+      background-color: #353535;
+      color: #fff;
+    }
+  }
+  :global(.anticon) {
+    color: #ccc;
+    font-size: 15px !important;
   }
 }

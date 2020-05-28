@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2020-05-27 11:51:16
  * @LastEditors: Siwen
- * @LastEditTime: 2020-05-28 17:21:41
+ * @LastEditTime: 2020-05-28 18:59:55
  * @Description: 
  */ 
 
@@ -12,6 +12,10 @@ import * as utils from '@/utils'
 /* 登录 */
 export const login = (params: Object = {}) => {
   return get('/login/cellphone', params)
+}
+/* 退出登录 */
+export const logout = (params: Object = {}) => {
+  return get('/logout', params)
 }
 /* 注册找回 */
 export const register = (params: Object = {}) => {

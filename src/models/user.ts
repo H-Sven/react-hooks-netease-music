@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2020-05-27 13:48:36
  * @LastEditors: Siwen
- * @LastEditTime: 2020-05-28 16:03:54
+ * @LastEditTime: 2020-05-28 19:03:49
  * @Description: 用户信息
  */ 
 import * as api from '@/services/api'
@@ -16,14 +16,14 @@ export default {
   reducers: {
     setLoginStatus(state, { payload: status}) {
       let myState = { ...state }
-      localStorage.setItem('isLogin', status)
       myState.isLogin = status
+      localStorage.setItem('isLogin', status)
       return myState
     },
     updateUserInfo(state, { payload: userInfo}) {
       let myState = { ...state }
-      localStorage.setItem('userInfo', JSON.stringify(userInfo))
-      myState.userInfo = userInfo
+      myState.userInfo = !Object.keys(userInfo).length ? {} : { ...myState.userInfo, ...userInfo}
+      localStorage.setItem('userInfo', JSON.stringify(myState.userInfo))
       return myState
     }
   },

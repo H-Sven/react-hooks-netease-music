@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import styles from '@/components/NavBar/navBar.less'
-import { NavLink, useLocation, connect, withRouter } from 'umi'
-import { Input } from 'antd';
-import { SearchOutlined } from '@ant-design/icons';
+import { NavLink, useLocation, history, connect, withRouter } from 'umi'
+import { Input, Avatar, Menu, Dropdown, notification } from 'antd';
+import { SearchOutlined, UserOutlined, BellOutlined, CrownOutlined, SketchOutlined,
+  SettingOutlined, SafetyCertificateOutlined, PoweroffOutlined
+} from '@ant-design/icons'
+import { logout } from '@/services/api'
 import Login from '@/components/Login'
 
 const navList = [
@@ -20,15 +23,59 @@ const homeNav = [ //首页分类导航
   { name: '歌手', url: '/discover/artist' },
   { name: '新碟上架', url: '/discover/album' }
 ]
+const userMenu = [
+  { icon: <UserOutlined />, label: '我的主页', url: '/my' },
+  { icon: <BellOutlined />, label: '我的消息', url: '' },
+  { icon: <CrownOutlined />, label: '我的等级', url: '' },
+  { icon: <SketchOutlined />, label: 'VIP会员', url: '' },
+  { icon: <SettingOutlined />, label: '个人设置', url: '' },
+  { icon: <SafetyCertificateOutlined />, label: '实名认证', url: '' },
+  { icon: <PoweroffOutlined />, label: '退出', url: 'logout' }
+]
 
 const NavBar = (props) => {
   const { pathname } = useLocation()
   const { dispatch, user } = props
   const [visible, setVisible] = useState(false)
+  const menu = (
+    <Menu className={styles.user_menu}>
+      {userMenu.map(item => {
+        return (
+          <Menu.Item key={item.label}>
+            {item.icon}
+            <span onClick={() => handlerUserMenu(item.url)}>{item.label}</span>
+          </Menu.Item>
+        )
+      })}
+    </Menu>
+  )
+
+  const handlerUserMenu = (url:string) => {
+    if (url === 'logout') {
+      logout().then(() => {
+        dispatch({
+          type: 'user/setLoginStatus',
+          payload: false
+        })
+        dispatch({
+          type: 'user/updateUserInfo',
+          payload: {}
+        })
+      }).catch(err => {
+        notification.destroy()
+        notification.error({
+          message: '错误',
+          description: err.message
+        })
+      })
+    } else {
+      history.push(url)
+    }
+  }
 
   useEffect(() => {
     if (Object.keys(user.userInfo).length) {
-      const userId = user.userInfo.userPoint.userId
+      const userId = user.userInfo.profile.userId
       dispatch({
         type: 'user/getUserInfo',
         payload: { uid: userId }
@@ -63,6 +110,11 @@ const NavBar = (props) => {
               <Input placeholder="音乐/视频/电台/用户" className={styles.search} prefix={<SearchOutlined />} />
               <div className={styles.creator}>创作者中心</div>
               {!user.isLogin && <div className={styles.login} onClick={() => setVisible(true)}>登录</div>}
+              {user.isLogin &&
+                <Dropdown overlay={menu} placement="bottomCenter">
+                  <Avatar className={styles.avatarUrl} src={(user.userInfo && user.userInfo.profile) ? user.userInfo.profile.avatarUrl : ''} />
+                </Dropdown>
+              }
             </div>
           </div>
         </div>

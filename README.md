@@ -5,7 +5,7 @@
 
 ## 接口
 非常感谢Binaryify提供的网易云音乐接口，传送门[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
-> 请先下载并允许此API环境
+> 请先下载并运行此API环境
 
 ## 使用步骤
 
@@ -51,8 +51,10 @@ npm build-prod
 - [x] 登录
 - [x] 注册
 - [x] 找回密码
+- [x] 退出登录
 - [x] 发送验证码
 - [x] 获取用户信息
+- [x] 我的主页
 
 ## 部分截图
 <!-- ![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlyxi2mrj20ad0icn43.jpg)![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlz0lmr2j20ac0idmzv.jpg) -->
