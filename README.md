@@ -1,6 +1,11 @@
-# Reack-hooks实现的PC版网易云音乐
+# React-hooks网易云音乐
 
-> api：ap使用的是一个开源的nodejs封装的网易云音乐api，[地址](https://binaryify.github.io/NeteaseCloudMusicApi/#/?id=%e5%ae%89%e8%a3%85)
+> 使用react-hooks + TypeScript + UmiJs + DvaJs实现的PC版网易云音乐
+
+
+## 接口
+非常感谢Binaryify提供的网易云音乐接口，传送门[https://github.com/Binaryify/NeteaseCloudMusicApi](https://github.com/Binaryify/NeteaseCloudMusicApi)
+> 请先下载并允许此API环境
 
 ## 使用步骤
 
