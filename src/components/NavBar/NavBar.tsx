@@ -1,8 +1,9 @@
-import React from 'react'
-import styles from '@/components/TopBar/topBar.less'
-import { NavLink, useLocation } from 'umi'
+import React, { useState } from 'react'
+import styles from '@/components/NavBar/navBar.less'
+import { NavLink, useLocation, connect, withRouter } from 'umi'
 import { Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import Login from '@/components/Login/login'
 
 const navList = [
   { name: '发现音乐', url: '/' },
@@ -20,8 +21,14 @@ const homeNav = [ //首页分类导航
   { name: '新碟上架', url: '/discover/album' }
 ]
 
-const TopBar = () => {
+const NavBar = (props) => {
   const { pathname } = useLocation()
+  const { dispatch, user } = props
+  const [visible, setVisible] = useState(false)
+
+  const login = () => {
+    setVisible(true)
+  }
   return (
     <>
       <div className={styles.tob_bar}>
@@ -35,7 +42,10 @@ const TopBar = () => {
                     return (
                       <NavLink to={item.url} key={item.url} exact={pathname !== '/' && !pathname.includes('discover')} activeClassName={styles.selected}>
                         {item.name}
-                        {(pathname === item.url || ( item.url === '/' && pathname.includes('discover'))) && <div className={styles.sign}></div>}
+                        {
+                          (pathname === item.url || ( item.url === '/' && pathname.includes('discover'))) &&
+                          <div className={styles.sign}></div>
+                        }
                       </NavLink>
                     )
                   })
@@ -45,7 +55,7 @@ const TopBar = () => {
             <div className={styles.right}>
               <Input placeholder="音乐/视频/电台/用户" className={styles.search} prefix={<SearchOutlined />} />
               <div className={styles.creator}>创作者中心</div>
-              <div className={styles.login}>登录</div>
+              {!user.isLogin && <div className={styles.login} onClick={() => login()}>登录</div>}
             </div>
           </div>
         </div>
@@ -65,7 +75,13 @@ const TopBar = () => {
           }
         </div>
       </div>
+      <Login visible={visible} setVisible={setVisible} />
     </>
   )
 }
-export default TopBar
+function mapStateToProps(state) { //state是项目所有的models
+  return {
+    user: state.user
+  }
+}
+export default withRouter(connect(mapStateToProps)(NavBar))

@@ -1,8 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "umi dev",
+    "start": "cross-env UMI_ENV=dev umi dev",
     "build": "umi build",
+    "build-prod": "cross-env UMI_ENV=prod umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
     "test": "umi-test",
@@ -31,5 +32,8 @@
     "umi": "^3.2.2",
     "yorkie": "^2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "@umijs/plugin-esbuild": "^1.0.0-beta.2",
+    "cross-env": "^7.0.2"
+  }
 }

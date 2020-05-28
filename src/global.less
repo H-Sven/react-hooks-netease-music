@@ -1,4 +1,66 @@
-h1, h2, h3, h4, h5, h6 {
+* {
   margin: 0;
   padding: 0;
+}
+label {
+  font-weight: 700;
+}
+div {
+  -webkit-overflow-scrolling: touch;
+}
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  outline: none;
+  text-decoration: none;
+}
+
+div:focus {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+a,
+a:focus,
+a:hover {
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+div,
+input,
+button,
+select,
+textarea {
+  outline: none;
+  -webkit-appearance: none;
+  /*强制去除表单自带的样式*/
+}
+input:-webkit-autofill {
+  background-image: none;
+}
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+input::-webkit-outer-spin-button,input::-webkit-inner-spin-button{  
+  -webkit-appearance:textfield;
+}     
+input[type="number"]{ 
+  -moz-appearance:textfield;  
 }

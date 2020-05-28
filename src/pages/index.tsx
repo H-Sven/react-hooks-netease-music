@@ -1,10 +1,10 @@
 import React from 'react';
-import TopBar from '@/components/TopBar/TopBar';
+import NavBar from '@/components/NavBar/NavBar';
 
 const Index = (props) => {
   return (
     <>
-      <TopBar />
+      <NavBar />
       <div>{ props.children }</div>
     </>
   )
