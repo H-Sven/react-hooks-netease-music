@@ -50,6 +50,9 @@ npm build-prod
 ## 功能
 - [x] 登录
 - [x] 注册
+- [x] 找回密码
+- [x] 发送验证码
+- [x] 获取用户信息
 
 ## 部分截图
 <!-- ![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlyxi2mrj20ad0icn43.jpg)![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlz0lmr2j20ac0idmzv.jpg) -->

@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styles from '@/components/NavBar/navBar.less'
 import { NavLink, useLocation, connect, withRouter } from 'umi'
 import { Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
-import Login from '@/components/Login/login'
+import Login from '@/components/Login'
 
 const navList = [
   { name: '发现音乐', url: '/' },
@@ -26,9 +26,16 @@ const NavBar = (props) => {
   const { dispatch, user } = props
   const [visible, setVisible] = useState(false)
 
-  const login = () => {
-    setVisible(true)
-  }
+  useEffect(() => {
+    if (Object.keys(user.userInfo).length) {
+      const userId = user.userInfo.userPoint.userId
+      dispatch({
+        type: 'user/getUserInfo',
+        payload: { uid: userId }
+      })
+    }
+  }, [])
+
   return (
     <>
       <div className={styles.tob_bar}>
@@ -55,7 +62,7 @@ const NavBar = (props) => {
             <div className={styles.right}>
               <Input placeholder="音乐/视频/电台/用户" className={styles.search} prefix={<SearchOutlined />} />
               <div className={styles.creator}>创作者中心</div>
-              {!user.isLogin && <div className={styles.login} onClick={() => login()}>登录</div>}
+              {!user.isLogin && <div className={styles.login} onClick={() => setVisible(true)}>登录</div>}
             </div>
           </div>
         </div>
