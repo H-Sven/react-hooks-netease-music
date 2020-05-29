@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'umi'
 
 const My = (props) => {
-  const { dispatch, my, user } = props
+  const { dispatch, user } = props
   function handleDelete() {
     dispatch({
       type: 'user/getLoginStatus',
@@ -19,7 +19,6 @@ const My = (props) => {
 
 function mapStateToProps(state) { //state是项目所有的models
   return {
-    my: state.my,
     user: state.user
   }
 }

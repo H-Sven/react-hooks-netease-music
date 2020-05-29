@@ -55,6 +55,7 @@ npm build-prod
 - [x] 发送验证码
 - [x] 获取用户信息
 - [x] 我的主页
+- [x] 我的等级页
 
 ## 部分截图
 <!-- ![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlyxi2mrj20ad0icn43.jpg)![](http://wx4.sinaimg.cn/large/7b9a6229ly1fhwlz0lmr2j20ac0idmzv.jpg) -->

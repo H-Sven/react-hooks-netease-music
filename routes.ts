@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2020-05-27 10:37:49
  * @LastEditors: Siwen
- * @LastEditTime: 2020-05-29 12:14:17
+ * @LastEditTime: 2020-05-29 15:58:35
  * @Description: 路由文件
  */ 
 const routes = [
@@ -16,6 +16,8 @@ const routes = [
       { path: '/my',component: '@/pages/my/My' },
       { path: '/friend',component: '@/pages/friend/Friend' },
       { path: '/user/home',component: '@/pages/user/home' },
+      { path: '/user/message',component: '@/pages/user/message' },
+      { path: '/user/level',component: '@/pages/user/level' },
     ]
   },
 ]
