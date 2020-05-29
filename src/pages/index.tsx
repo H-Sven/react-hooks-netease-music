@@ -1,11 +1,13 @@
-import React from 'react';
-import NavBar from '@/components/NavBar/NavBar';
+import React from 'react'
+import NavBar from '@/components/NavBar/NavBar'
+import Footer from '@/components/Footer'
 
 const Index = (props) => {
   return (
     <>
       <NavBar />
-      <div>{ props.children }</div>
+      <div style={{ width: '100%', height: '100%' }}>{ props.children }</div>
+      <Footer />
     </>
   )
 }

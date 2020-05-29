@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styles from './login.less'
 import { Form, Input, Button, notification } from 'antd'
 import { UserOutlined, LockOutlined, EditOutlined, BranchesOutlined } from '@ant-design/icons'
-import { register, sentCaptcha } from '@/services/api'
+import { register, sentCaptcha } from '@/services/api/base'
 import { connect } from 'umi'
 import * as utils from '@/utils'
 

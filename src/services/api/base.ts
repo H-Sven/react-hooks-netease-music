@@ -1,13 +1,11 @@
 /*
  * @Author: Siwen
- * @Date: 2020-05-27 11:51:16
+ * @Date: 2020-05-29 13:37:26
  * @LastEditors: Siwen
- * @LastEditTime: 2020-05-28 18:59:55
+ * @LastEditTime: 2020-05-29 13:47:07
  * @Description: 
- */ 
-
-import { request, get, post } from '@/services/request'
-import * as utils from '@/utils'
+ */
+import { get } from '@/services/request'
 
 /* 登录 */
 export const login = (params: Object = {}) => {
@@ -24,12 +22,4 @@ export const register = (params: Object = {}) => {
 /* 发送验证码 */
 export const sentCaptcha = (params: Object = {}) => {
   return get('/captcha/sent', params)
-}
-/* 用户信息 */
-export const getUserInfo = (params: Object = {}) => {
-  return get('/user/detail', params)
-}
-/* 热门歌单 */
-export const getTopPlaylist = (params: Object = {}) => {
-  return get('/top/playlist', params)
 }

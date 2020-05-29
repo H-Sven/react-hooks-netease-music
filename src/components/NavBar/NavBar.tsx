@@ -5,7 +5,7 @@ import { Input, Avatar, Menu, Dropdown, notification } from 'antd';
 import { SearchOutlined, UserOutlined, BellOutlined, CrownOutlined, SketchOutlined,
   SettingOutlined, SafetyCertificateOutlined, PoweroffOutlined
 } from '@ant-design/icons'
-import { logout } from '@/services/api'
+import { logout } from '@/services/api/base'
 import Login from '@/components/Login'
 
 const navList = [
@@ -24,7 +24,7 @@ const homeNav = [ //首页分类导航
   { name: '新碟上架', url: '/discover/album' }
 ]
 const userMenu = [
-  { icon: <UserOutlined />, label: '我的主页', url: '/my' },
+  { icon: <UserOutlined />, label: '我的主页', url: '/user/home' },
   { icon: <BellOutlined />, label: '我的消息', url: '' },
   { icon: <CrownOutlined />, label: '我的等级', url: '' },
   { icon: <SketchOutlined />, label: 'VIP会员', url: '' },

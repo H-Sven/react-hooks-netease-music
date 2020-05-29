@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './login.less'
 import { Form, Input, Button, notification } from 'antd'
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
-import { login } from '@/services/api'
+import { login } from '@/services/api/base'
 import { connect } from 'umi'
 
 const Login = (props) => {

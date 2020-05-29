@@ -1,0 +1,75 @@
+.container {
+  .top {
+    display: flex;
+    :global(.ant-avatar-image) {
+      width: 188px;
+      height: 188px;
+      border: 1px solid #d5d5d5;
+      margin-right: 40px;
+    }
+    .userinfo {
+      flex: 1;
+      .name_box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-bottom: 15px;
+        border-bottom: 1px solid #ccc;
+        .left {
+          display: flex;
+          align-items: center;
+          .nickname {
+            font-size: 22px;
+            color: #000;
+            margin-right: 10px;
+            font-weight: 600;
+          }
+          .level {
+            height: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: #e03a24;
+            border-radius: 20px;
+            border: 1px solid #e03a24;
+            font-size: 14px;
+            font-weight: bold;
+            font-style: italic;
+          }
+        }
+      }
+      .data {
+        display: flex;
+        align-items: center;
+        margin-top: 15px;
+        .data_info {
+          min-width: 65px;
+          border-left: 1px solid #ccc;
+          padding-left: 25px;
+          padding-right: 35px;
+          color: #666;
+          cursor: pointer;
+          &:nth-child(1) {
+            padding-left: 0;
+            border-left: 0px;
+          }
+          &:hover {
+            color: #0c73c2;
+          }
+          .count {
+            font-weight: 600;
+            font-size: 24px;
+          }
+        }
+      }
+      .addres {
+        display: flex;
+        align-items: center;
+        color: #666;
+        margin-top: 15px;
+      }
+    }
+  }
+}
