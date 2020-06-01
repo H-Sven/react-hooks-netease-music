@@ -27,7 +27,7 @@ const userMenu = [
   { icon: <UserOutlined />, label: '我的主页', url: '/user/home' },
   { icon: <BellOutlined />, label: '我的消息', url: '/user/message' },
   { icon: <CrownOutlined />, label: '我的等级', url: '/user/level' },
-  { icon: <SketchOutlined />, label: 'VIP会员', url: '' },
+  { icon: <SketchOutlined />, label: 'VIP会员', url: '/user/member' },
   { icon: <SettingOutlined />, label: '个人设置', url: '' },
   { icon: <SafetyCertificateOutlined />, label: '实名认证', url: '' },
   { icon: <PoweroffOutlined />, label: '退出', url: 'logout' }

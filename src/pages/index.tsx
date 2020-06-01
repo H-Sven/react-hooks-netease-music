@@ -6,7 +6,7 @@ const Index = (props) => {
   return (
     <>
       <NavBar />
-      <div style={{ width: '100%', height: '100%' }}>{ props.children }</div>
+      <div style={{ width: '100%', minHeight: '700px' }}>{ props.children }</div>
       <Footer />
     </>
   )
