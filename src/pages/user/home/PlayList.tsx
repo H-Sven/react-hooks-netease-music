@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect, Link } from 'umi'
 import styles from './playList.less'
 import { CustomerServiceOutlined, PlayCircleOutlined } from '@ant-design/icons'
@@ -20,7 +20,7 @@ const UserInfo = (props:any) => {
             <div className={styles.item} key={item.id}>
               <div className={styles.cover}>
                 <img src={item.coverImgUrl} alt=""/>
-                <Link to="/playlist"></Link>
+                <Link to={`/playlist?id=${item.id}`}></Link>
                 <div className={styles.bottom}>
                   <div className={styles.left}>
                     <CustomerServiceOutlined />

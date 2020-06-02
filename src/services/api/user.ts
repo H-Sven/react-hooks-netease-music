@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2020-05-29 13:37:42
  * @LastEditors: Siwen
- * @LastEditTime: 2020-05-29 13:55:56
+ * @LastEditTime: 2020-06-02 14:16:11
  * @Description: 用户相关接口
  */ 
 import { get } from '@/services/request'

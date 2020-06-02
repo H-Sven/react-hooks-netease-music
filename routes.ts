@@ -2,7 +2,7 @@
  * @Author: Siwen
  * @Date: 2020-05-27 10:37:49
  * @LastEditors: Siwen
- * @LastEditTime: 2020-06-01 09:57:49
+ * @LastEditTime: 2020-06-02 14:04:03
  * @Description: 路由文件
  */ 
 const routes = [
@@ -19,6 +19,7 @@ const routes = [
       { path: '/user/message',component: '@/pages/user/message' },
       { path: '/user/level',component: '@/pages/user/level' },
       { path: '/user/member',component: '@/pages/user/member' },
+      { path: '/playlist',component: '@/pages/playlist' },
     ]
   },
 ]

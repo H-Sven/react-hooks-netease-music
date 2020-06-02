@@ -20,7 +20,7 @@ const Member = (props:any) => {
   const { Option } = Select
   const { Search } = Input
   const [tabTye, setTabTye] = useState<number>(1)
-  const [productList, setProductList] = useState(vinyl)
+  const [productList, setProductList] = useState<any>(vinyl)
   const [selectItem, setSelectItem] = useState<any>(vinyl[0])
   const [discountType, setDiscountType] = useState<number>(1)
   const [discountList, setDiscountList] = useState<any>([])
